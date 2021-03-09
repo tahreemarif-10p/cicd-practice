@@ -20,4 +20,6 @@ def test_customer_created(client, empty_db):
     assert 'customer_id' in response_data
 
 
-
+def test_get_customer(client, empty_db):
+    response = client.get('/customers')
+    assert response.status_code == 200
