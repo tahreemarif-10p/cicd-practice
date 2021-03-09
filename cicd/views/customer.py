@@ -27,7 +27,7 @@ def customer_handler():
 
         response = {
             'status_code': 201,
-            'message': "Customer created successfully!!",
+            'message': "Customer created!!",
             'customer_id': customer_id
         }
         return jsonify(response), 201
