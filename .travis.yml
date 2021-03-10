@@ -5,6 +5,8 @@ language: python
 python:
 - '3.7'
 
+group: edge
+
 branches:
   only:
   - master
@@ -20,4 +22,4 @@ before_script:
 - createdb cicd -T template0
 
 script:
-- python -m pytest --cov-report term-missing --cov=cicd cicd/tests/ --cov-fail-under=90
+- pytest --cov-report term-missing --cov=cicd cicd/tests/ --cov-fail-under=90
