@@ -1,6 +1,6 @@
 import pytest
-from cicd import db
 from cicd import app as flask_app
+from cicd import db
 
 
 @pytest.fixture
