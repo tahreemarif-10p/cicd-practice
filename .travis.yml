@@ -13,10 +13,11 @@ services:
   - postgresql
 
 install:
+- pip install -r requirements.txt
 - pip install tox-travis
 before_script:
 - psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 - createdb cicd -T template0
 
 script:
-- tox
+- python -m pytest cicd/tests/
