@@ -20,4 +20,4 @@ before_script:
 - createdb cicd -T template0
 
 script:
-- python -m pytest cicd/tests/
+- pytest --cov-report term-missing --cov=cicd cicd/tests/ --cov-fail-under=90
