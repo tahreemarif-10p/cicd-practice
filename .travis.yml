@@ -19,4 +19,4 @@ before_script:
 - createdb cicd -T template0
 
 script:
-- tox
+- pytest --cov-report term-missing --cov=cicd cicd/tests/ --cov-fail-under=90
