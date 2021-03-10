@@ -13,11 +13,10 @@ services:
   - postgresql
 
 install:
-- pip install -r requirements.txt
 - pip install tox-travis
 before_script:
 - psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 - createdb cicd -T template0
 
 script:
-- pytest --cov-report term-missing --cov=cicd cicd/tests/ --cov-fail-under=90
+-tox
